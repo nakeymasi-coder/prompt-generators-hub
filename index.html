@@ -29,6 +29,15 @@
   .lesson { text-align:center; text-decoration:none; background:#fff; color:#103B63; border:2px solid #a9d4f7; font-weight:800; font-size:15px; padding:11px 14px; border-radius:999px; }
   .open:active,.lesson:active { transform:scale(.97); }
   .none { text-align:center; font-size:15px; color:#2c587f; padding:26px 0; display:none; }
+  .overlay { position:fixed; inset:0; background:rgba(16,59,99,.55); display:none; align-items:flex-end; justify-content:center; z-index:50; }
+  .overlay.on { display:flex; }
+  .sheet { background:#fff; width:100%; max-width:860px; max-height:88vh; border-radius:22px 22px 0 0; padding:20px 18px; display:flex; flex-direction:column; gap:12px; box-shadow:0 -8px 30px rgba(16,59,99,.3); }
+  .sheet h2 { font-size:20px; font-weight:900; color:#103B63; }
+  .sheet pre { flex:1; overflow:auto; white-space:pre-wrap; word-wrap:break-word; font-size:14px; line-height:1.5; color:#103B63; background:#eaf6ff; border:2px solid #cfe8fb; border-radius:14px; padding:14px; font-family:inherit; }
+  .sheet .row { display:flex; gap:8px; }
+  .copy { flex:1; border:none; cursor:pointer; background:linear-gradient(90deg,#168FEA,#103B63); color:#fff; font-weight:800; font-size:15px; padding:12px; border-radius:999px; }
+  .close { border:2px solid #a9d4f7; cursor:pointer; background:#fff; color:#103B63; font-weight:800; font-size:15px; padding:12px 18px; border-radius:999px; }
+  button.open { border:none; cursor:pointer; font-family:inherit; }
 </style>
 </head>
 <body>
@@ -36,12 +45,12 @@
   <h1>✨ Prompt Generators</h1>
   <p class="sub">Search by name or theme, pick one, tap Open.</p>
   <input class="search" id="q" type="text" placeholder="Search generators..." oninput="render()">
-  <div class="chips"><button class="chip on" data-cat="All" onclick="setCat(this)">All (66)</button>
+  <div class="chips"><button class="chip on" data-cat="All" onclick="setCat(this)">All (63)</button>
 <button class="chip" data-cat="Surreal &amp; Fantasy" onclick="setCat(this)">Surreal &amp; Fantasy (11)</button>
-<button class="chip" data-cat="Luxury &amp; Lifestyle" onclick="setCat(this)">Luxury &amp; Lifestyle (18)</button>
+<button class="chip" data-cat="Luxury &amp; Lifestyle" onclick="setCat(this)">Luxury &amp; Lifestyle (16)</button>
 <button class="chip" data-cat="Ads &amp; Business" onclick="setCat(this)">Ads &amp; Business (5)</button>
 <button class="chip" data-cat="Affirmations &amp; Faith" onclick="setCat(this)">Affirmations &amp; Faith (4)</button>
-<button class="chip" data-cat="Games &amp; Learning" onclick="setCat(this)">Games &amp; Learning (6)</button>
+<button class="chip" data-cat="Games &amp; Learning" onclick="setCat(this)">Games &amp; Learning (5)</button>
 <button class="chip" data-cat="Holiday &amp; Christmas" onclick="setCat(this)">Holiday &amp; Christmas (5)</button>
 <button class="chip" data-cat="Halloween" onclick="setCat(this)">Halloween (4)</button>
 <button class="chip" data-cat="Events &amp; Occasions" onclick="setCat(this)">Events &amp; Occasions (8)</button>
@@ -54,399 +63,388 @@
   <div class="ct">Business Hub Generator</div>
   <div class="meta"><span class="pill">Ads &amp; Business</span><span class="note">Opens in Grok</span></div>
   
-  <div class="row"><a class="open" href="https://grok.com/share/c2hhcmQtMw_ce1de4cd-aeb6-45f0-b752-193c1a5ba305" target="_blank" rel="noopener">Open</a><a class="lesson" href="https://www.skool.com/the-glam-vault-9512/classroom/87bcf6dc?md=55dff9210ba44dbca00b3200147a3bed" target="_blank" rel="noopener">Lesson</a></div>
+  <div class="row"><a class="open" href="https://grok.com/share/c2hhcmQtMw_ce1de4cd-aeb6-45f0-b752-193c1a5ba305" target="_blank" rel="noopener">Open</a></div>
 </div>
 <div class="card" data-n="2" data-cat="Ads &amp; Business" data-title="social media generator">
   <div class="ct">Social Media Generator</div>
   <div class="meta"><span class="pill">Ads &amp; Business</span></div>
   
-  <div class="row"><a class="open" href="https://nakeymasi-coder.github.io/Upgraded-Social-Media-Prompt-Generator/" target="_blank" rel="noopener">Open</a><a class="lesson" href="https://www.skool.com/the-glam-vault-9512/classroom/87bcf6dc?md=d78378baf9e1460cbce53d1ed705cd8b" target="_blank" rel="noopener">Lesson</a></div>
+  <div class="row"><a class="open" href="https://nakeymasi-coder.github.io/Upgraded-Social-Media-Prompt-Generator/" target="_blank" rel="noopener">Open</a></div>
 </div>
 <div class="card" data-n="3" data-cat="Surreal &amp; Fantasy" data-title="blended reality">
   <div class="ct">Blended Reality</div>
   <div class="meta"><span class="pill">Surreal &amp; Fantasy</span><span class="note">Opens in Gemini</span></div>
   
-  <div class="row"><a class="open" href="https://gemini.google.com/share/dd528f18c2cf" target="_blank" rel="noopener">Open</a><a class="lesson" href="https://www.skool.com/the-glam-vault-9512/classroom/87bcf6dc?md=cbf3f263bb8543d5a990c1a4f889664f" target="_blank" rel="noopener">Lesson</a></div>
+  <div class="row"><a class="open" href="https://gemini.google.com/share/dd528f18c2cf" target="_blank" rel="noopener">Open</a></div>
 </div>
 <div class="card" data-n="4" data-cat="Ads &amp; Business" data-title="impossible-scale fashion ad generator">
   <div class="ct">Impossible-Scale Fashion Ad Generator</div>
   <div class="meta"><span class="pill">Ads &amp; Business</span><span class="note">Folder</span></div>
   
-  <div class="row"><a class="open" href="https://drive.google.com/drive/folders/1uIlOMmprxz-uq1kuNtbUyOOv_8JgtPp7?usp=sharing" target="_blank" rel="noopener">Open</a><a class="lesson" href="https://www.skool.com/the-glam-vault-9512/classroom/87bcf6dc?md=0e6711f4cd144c2688f9ce160fd90b98" target="_blank" rel="noopener">Lesson</a></div>
+  <div class="row"><a class="open" href="https://drive.google.com/drive/folders/1uIlOMmprxz-uq1kuNtbUyOOv_8JgtPp7?usp=sharing" target="_blank" rel="noopener">Open</a></div>
 </div>
 <div class="card" data-n="5" data-cat="Surreal &amp; Fantasy" data-title="2-in-1 surreal generator">
   <div class="ct">2-in-1 Surreal Generator</div>
   <div class="meta"><span class="pill">Surreal &amp; Fantasy</span></div>
   
-  <div class="row"><a class="open" href="https://nakeymasi-coder.github.io/Upgraded-2-n-1-Surreal-Prompt-Generator/" target="_blank" rel="noopener">Open</a><a class="lesson" href="https://www.skool.com/the-glam-vault-9512/classroom/87bcf6dc?md=3e1c6ba978bf4459929d8de35158d851" target="_blank" rel="noopener">Lesson</a></div>
+  <div class="row"><a class="open" href="https://nakeymasi-coder.github.io/Upgraded-2-n-1-Surreal-Prompt-Generator/" target="_blank" rel="noopener">Open</a></div>
 </div>
 <div class="card" data-n="6" data-cat="Surreal &amp; Fantasy" data-title="ultra-surreal luxury 2-in-1 editorial generator">
   <div class="ct">Ultra-Surreal Luxury 2-in-1 Editorial Generator</div>
   <div class="meta"><span class="pill">Surreal &amp; Fantasy</span></div>
   
-  <div class="row"><a class="open" href="https://2-n-1-surreal-app.netlify.app/" target="_blank" rel="noopener">Open</a><a class="lesson" href="https://www.skool.com/the-glam-vault-9512/classroom/87bcf6dc?md=d63b8355a83d43faac8c9415afd8bd4f" target="_blank" rel="noopener">Lesson</a></div>
+  <div class="row"><a class="open" href="https://2-n-1-surreal-app.netlify.app/" target="_blank" rel="noopener">Open</a></div>
 </div>
 <div class="card" data-n="7" data-cat="Surreal &amp; Fantasy" data-title="scroll-stopping surreal ad generator">
   <div class="ct">Scroll-Stopping Surreal Ad Generator</div>
   <div class="meta"><span class="pill">Surreal &amp; Fantasy</span></div>
   
-  <div class="row"><a class="open" href="https://nakeymasi-coder.github.io/Upgraded-The-Scroll-Stopping-Surreal-Ad-Generator/" target="_blank" rel="noopener">Open</a><a class="lesson" href="https://www.skool.com/the-glam-vault-9512/classroom/87bcf6dc?md=ffe9148d633e4c8f8ed23c83abcb001d" target="_blank" rel="noopener">Lesson</a></div>
+  <div class="row"><a class="open" href="https://nakeymasi-coder.github.io/Upgraded-The-Scroll-Stopping-Surreal-Ad-Generator/" target="_blank" rel="noopener">Open</a></div>
 </div>
 <div class="card" data-n="8" data-cat="Ads &amp; Business" data-title="billboard prompt generator">
   <div class="ct">Billboard Prompt Generator</div>
   <div class="meta"><span class="pill">Ads &amp; Business</span></div>
   
-  <div class="row"><a class="open" href="https://nakeymasi-coder.github.io/Billboard-Prompt-Generator-Deluxe2/" target="_blank" rel="noopener">Open</a><a class="lesson" href="https://www.skool.com/the-glam-vault-9512/classroom/87bcf6dc?md=e0b49f6acee245ee91ed7bc935d24f75" target="_blank" rel="noopener">Lesson</a></div>
+  <div class="row"><a class="open" href="https://nakeymasi-coder.github.io/Billboard-Prompt-Generator-Deluxe2/" target="_blank" rel="noopener">Open</a></div>
 </div>
 <div class="card" data-n="9" data-cat="Surreal &amp; Fantasy" data-title="emotion as a place generator">
   <div class="ct">Emotion as a Place Generator</div>
   <div class="meta"><span class="pill">Surreal &amp; Fantasy</span></div>
   
-  <div class="row"><a class="open" href="https://nakeymasi-coder.github.io/Emotion-as-a-Place-Generator/" target="_blank" rel="noopener">Open</a><a class="lesson" href="https://www.skool.com/the-glam-vault-9512/classroom/87bcf6dc?md=0ec63e20edb4491694885333f35d3930" target="_blank" rel="noopener">Lesson</a></div>
+  <div class="row"><a class="open" href="https://nakeymasi-coder.github.io/Emotion-as-a-Place-Generator/" target="_blank" rel="noopener">Open</a></div>
 </div>
 <div class="card" data-n="10" data-cat="Luxury &amp; Lifestyle" data-title="90s girl generator">
   <div class="ct">90s Girl Generator</div>
   <div class="meta"><span class="pill">Luxury &amp; Lifestyle</span></div>
   
-  <div class="row"><a class="open" href="https://nakeymasi-coder.github.io/90s-Girl-Pop-Art-Prompt-Generator/" target="_blank" rel="noopener">Open</a><a class="lesson" href="https://www.skool.com/the-glam-vault-9512/classroom/87bcf6dc?md=32dc3cdb7401426cb0b7e41e09c00c01" target="_blank" rel="noopener">Lesson</a></div>
+  <div class="row"><a class="open" href="https://nakeymasi-coder.github.io/90s-Girl-Pop-Art-Prompt-Generator/" target="_blank" rel="noopener">Open</a></div>
 </div>
 <div class="card" data-n="11" data-cat="Luxury &amp; Lifestyle" data-title="built to be seen">
   <div class="ct">Built to Be Seen</div>
   <div class="meta"><span class="pill">Luxury &amp; Lifestyle</span></div>
   
-  <div class="row"><a class="open" href="https://built-to-be-seen-generator.netlify.app/" target="_blank" rel="noopener">Open</a><a class="lesson" href="https://www.skool.com/the-glam-vault-9512/classroom/87bcf6dc?md=726ecea8e8834d87915e927ff03fea2a" target="_blank" rel="noopener">Lesson</a></div>
+  <div class="row"><a class="open" href="https://built-to-be-seen-generator.netlify.app/" target="_blank" rel="noopener">Open</a></div>
 </div>
 <div class="card" data-n="12" data-cat="Luxury &amp; Lifestyle" data-title="glowrider biker generator">
   <div class="ct">Glowrider Biker Generator</div>
   <div class="meta"><span class="pill">Luxury &amp; Lifestyle</span></div>
   
-  <div class="row"><a class="open" href="https://glowrider-biker-generator.netlify.app/" target="_blank" rel="noopener">Open</a><a class="lesson" href="https://www.skool.com/the-glam-vault-9512/classroom/87bcf6dc?md=300059540bf4468e8f01cf159c1c0997" target="_blank" rel="noopener">Lesson</a></div>
+  <div class="row"><a class="open" href="https://glowrider-biker-generator.netlify.app/" target="_blank" rel="noopener">Open</a></div>
 </div>
 <div class="card" data-n="13" data-cat="Luxury &amp; Lifestyle" data-title="paris luxe dream prompt generator">
   <div class="ct">Paris Luxe Dream Prompt Generator</div>
   <div class="meta"><span class="pill">Luxury &amp; Lifestyle</span></div>
   
-  <div class="row"><a class="open" href="https://nakeymasi-coder.github.io/Paris-Luxe-Dream-Generator/" target="_blank" rel="noopener">Open</a><a class="lesson" href="https://www.skool.com/the-glam-vault-9512/classroom/87bcf6dc?md=3694191197a04088bef500e4f37335ef" target="_blank" rel="noopener">Lesson</a></div>
+  <div class="row"><a class="open" href="https://nakeymasi-coder.github.io/Paris-Luxe-Dream-Generator/" target="_blank" rel="noopener">Open</a></div>
 </div>
 <div class="card" data-n="14" data-cat="Luxury &amp; Lifestyle" data-title="little luxe peekers studio">
   <div class="ct">Little Luxe Peekers Studio</div>
   <div class="meta"><span class="pill">Luxury &amp; Lifestyle</span></div>
   <div class="pw">Password: <b>GlowPeek44</b></div>
-  <div class="row"><a class="open" href="https://little-peekers-app.netlify.app/" target="_blank" rel="noopener">Open</a><a class="lesson" href="https://www.skool.com/the-glam-vault-9512/classroom/87bcf6dc?md=bb5d0ce6b39f413b9afe4ea9adb32dea" target="_blank" rel="noopener">Lesson</a></div>
+  <div class="row"><a class="open" href="https://little-peekers-app.netlify.app/" target="_blank" rel="noopener">Open</a></div>
 </div>
 <div class="card" data-n="15" data-cat="Luxury &amp; Lifestyle" data-title="foodie prompt generator">
   <div class="ct">Foodie Prompt Generator</div>
   <div class="meta"><span class="pill">Luxury &amp; Lifestyle</span></div>
   
-  <div class="row"><a class="open" href="https://nakeymasi-coder.github.io/Foodie-Prompt-Generator/" target="_blank" rel="noopener">Open</a><a class="lesson" href="https://www.skool.com/the-glam-vault-9512/classroom/87bcf6dc?md=62b1f766722049f388a1a35b29386537" target="_blank" rel="noopener">Lesson</a></div>
+  <div class="row"><a class="open" href="https://nakeymasi-coder.github.io/Foodie-Prompt-Generator/" target="_blank" rel="noopener">Open</a></div>
 </div>
 <div class="card" data-n="16" data-cat="Luxury &amp; Lifestyle" data-title="luxury mansion generator">
   <div class="ct">Luxury Mansion Generator</div>
   <div class="meta"><span class="pill">Luxury &amp; Lifestyle</span></div>
   
-  <div class="row"><a class="open" href="https://nakeymasi-coder.github.io/Luxury-Creator-Mansion-Prompt-Generator/" target="_blank" rel="noopener">Open</a><a class="lesson" href="https://www.skool.com/the-glam-vault-9512/classroom/87bcf6dc?md=458dbef7db9c4236b69d130e10edb523" target="_blank" rel="noopener">Lesson</a></div>
-</div>
-<div class="card" data-n="17" data-cat="Luxury &amp; Lifestyle" data-title="beauty illustration prompt generator">
-  <div class="ct">Beauty Illustration Prompt Generator</div>
-  <div class="meta"><span class="pill">Luxury &amp; Lifestyle</span><span class="note">Link needs fixing</span></div>
-  
-  <div class="row"><a class="open" href="https://www.skool.com/the-glam-vault-9512/classroom/87bcf6dc?md=22b38b2c2fbf4a63bd6ff39a5490814a" target="_blank" rel="noopener">Open</a><a class="lesson" href="https://www.skool.com/the-glam-vault-9512/classroom/87bcf6dc?md=22b38b2c2fbf4a63bd6ff39a5490814a" target="_blank" rel="noopener">Lesson</a></div>
-</div>
-<div class="card" data-n="18" data-cat="Luxury &amp; Lifestyle" data-title="luxury lifestyle image generator">
-  <div class="ct">Luxury Lifestyle Image Generator</div>
-  <div class="meta"><span class="pill">Luxury &amp; Lifestyle</span><span class="note">Link needs fixing</span></div>
-  
-  <div class="row"><a class="open" href="https://www.skool.com/the-glam-vault-9512/classroom/87bcf6dc?md=b5edd651dd654609b0b49596f2e16d31" target="_blank" rel="noopener">Open</a><a class="lesson" href="https://www.skool.com/the-glam-vault-9512/classroom/87bcf6dc?md=b5edd651dd654609b0b49596f2e16d31" target="_blank" rel="noopener">Lesson</a></div>
+  <div class="row"><a class="open" href="https://nakeymasi-coder.github.io/Luxury-Creator-Mansion-Prompt-Generator/" target="_blank" rel="noopener">Open</a></div>
 </div>
 <div class="card" data-n="19" data-cat="Luxury &amp; Lifestyle" data-title="luxury lip generator">
   <div class="ct">Luxury Lip Generator</div>
   <div class="meta"><span class="pill">Luxury &amp; Lifestyle</span></div>
   
-  <div class="row"><a class="open" href="https://nakeymasi-coder.github.io/Updated-Luxury-Lip-Generator/" target="_blank" rel="noopener">Open</a><a class="lesson" href="https://www.skool.com/the-glam-vault-9512/classroom/87bcf6dc?md=939611a711764e00b61d296ad60bebed" target="_blank" rel="noopener">Lesson</a></div>
+  <div class="row"><a class="open" href="https://nakeymasi-coder.github.io/Updated-Luxury-Lip-Generator/" target="_blank" rel="noopener">Open</a></div>
 </div>
 <div class="card" data-n="20" data-cat="Surreal &amp; Fantasy" data-title="midnight neon &amp; color world prompt generator">
   <div class="ct">Midnight Neon &amp; Color World Prompt Generator</div>
   <div class="meta"><span class="pill">Surreal &amp; Fantasy</span><span class="note">Prompt doc</span></div>
   
-  <div class="row"><a class="open" href="https://docs.google.com/document/d/1L4HlVUauAOyxu9KEbTbImWnbC0e6J5pRFZcj6q8VsLo/edit?usp=sharing" target="_blank" rel="noopener">Open</a><a class="lesson" href="https://www.skool.com/the-glam-vault-9512/classroom/87bcf6dc?md=a64779d01cca4336945953d15fd24aa1" target="_blank" rel="noopener">Lesson</a></div>
+  <div class="row"><a class="open" href="https://docs.google.com/document/d/1L4HlVUauAOyxu9KEbTbImWnbC0e6J5pRFZcj6q8VsLo/edit?usp=sharing" target="_blank" rel="noopener">Open</a></div>
 </div>
 <div class="card" data-n="21" data-cat="Luxury &amp; Lifestyle" data-title="moonwalk legend tribute prompt generator">
   <div class="ct">Moonwalk Legend Tribute Prompt Generator</div>
   <div class="meta"><span class="pill">Luxury &amp; Lifestyle</span></div>
   
-  <div class="row"><a class="open" href="https://nakeymasi-coder.github.io/Micheal-Jackson/" target="_blank" rel="noopener">Open</a><a class="lesson" href="https://www.skool.com/the-glam-vault-9512/classroom/87bcf6dc?md=6700e572e46a4c2c98e0687127b66cc5" target="_blank" rel="noopener">Lesson</a></div>
+  <div class="row"><a class="open" href="https://nakeymasi-coder.github.io/Micheal-Jackson/" target="_blank" rel="noopener">Open</a></div>
 </div>
 <div class="card" data-n="22" data-cat="Surreal &amp; Fantasy" data-title="glam movieverse generator">
   <div class="ct">Glam MovieVerse Generator</div>
   <div class="meta"><span class="pill">Surreal &amp; Fantasy</span><span class="note">Opens in Gemini</span></div>
   
-  <div class="row"><a class="open" href="https://share.gemini.google/H5fvqCJWTaAD" target="_blank" rel="noopener">Open</a><a class="lesson" href="https://www.skool.com/the-glam-vault-9512/classroom/87bcf6dc?md=b00a5388bc66460587e20f037294f00f" target="_blank" rel="noopener">Lesson</a></div>
+  <div class="row"><a class="open" href="https://share.gemini.google/H5fvqCJWTaAD" target="_blank" rel="noopener">Open</a></div>
 </div>
 <div class="card" data-n="23" data-cat="Surreal &amp; Fantasy" data-title="glam fountain fantasy generator">
   <div class="ct">Glam Fountain Fantasy Generator</div>
   <div class="meta"><span class="pill">Surreal &amp; Fantasy</span></div>
   
-  <div class="row"><a class="open" href="https://glam-fountain-fantasy-generator.netlify.app/" target="_blank" rel="noopener">Open</a><a class="lesson" href="https://www.skool.com/the-glam-vault-9512/classroom/87bcf6dc?md=7861f5dac32347c4b2c4a3e3de2f5959" target="_blank" rel="noopener">Lesson</a></div>
+  <div class="row"><a class="open" href="https://glam-fountain-fantasy-generator.netlify.app/" target="_blank" rel="noopener">Open</a></div>
 </div>
 <div class="card" data-n="24" data-cat="Luxury &amp; Lifestyle" data-title="house of cards luxe prompt generator">
   <div class="ct">House of Cards Luxe Prompt Generator</div>
   <div class="meta"><span class="pill">Luxury &amp; Lifestyle</span></div>
   
-  <div class="row"><a class="open" href="https://nakeymasi-coder.github.io/House-of-Cards-Luxe-Prompt-Generator/" target="_blank" rel="noopener">Open</a><a class="lesson" href="https://www.skool.com/the-glam-vault-9512/classroom/87bcf6dc?md=1323cbf79a024a79b4ee4eadc21b1318" target="_blank" rel="noopener">Lesson</a></div>
+  <div class="row"><a class="open" href="https://nakeymasi-coder.github.io/House-of-Cards-Luxe-Prompt-Generator/" target="_blank" rel="noopener">Open</a></div>
 </div>
 <div class="card" data-n="25" data-cat="Luxury &amp; Lifestyle" data-title="boogie &amp; soul prompt generator">
   <div class="ct">Boogie &amp; Soul Prompt Generator</div>
   <div class="meta"><span class="pill">Luxury &amp; Lifestyle</span><span class="note">HTML file — download &amp; open</span></div>
   
-  <div class="row"><a class="open" href="https://drive.google.com/file/d/1JIut7xpAax7kOVpdKjBIYypMLuQx5CUR/view?usp=sharing" target="_blank" rel="noopener">Open</a><a class="lesson" href="https://www.skool.com/the-glam-vault-9512/classroom/87bcf6dc?md=63f5e45084d547d38edd0b1b106d9aef" target="_blank" rel="noopener">Lesson</a></div>
+  <div class="row"><a class="open" href="https://drive.google.com/file/d/1JIut7xpAax7kOVpdKjBIYypMLuQx5CUR/view?usp=sharing" target="_blank" rel="noopener">Open</a></div>
 </div>
 <div class="card" data-n="26" data-cat="Luxury &amp; Lifestyle" data-title="sports-themed generator">
   <div class="ct">Sports-Themed Generator</div>
   <div class="meta"><span class="pill">Luxury &amp; Lifestyle</span></div>
   
-  <div class="row"><a class="open" href="https://nakeymasi-coder.github.io/-Sports-Theme-AI-Generator/" target="_blank" rel="noopener">Open</a><a class="lesson" href="https://www.skool.com/the-glam-vault-9512/classroom/87bcf6dc?md=6333717611a04155aa99991c99ade664" target="_blank" rel="noopener">Lesson</a></div>
+  <div class="row"><a class="open" href="https://nakeymasi-coder.github.io/-Sports-Theme-AI-Generator/" target="_blank" rel="noopener">Open</a></div>
 </div>
 <div class="card" data-n="27" data-cat="Surreal &amp; Fantasy" data-title="willy wonka inspired">
   <div class="ct">Willy Wonka Inspired</div>
   <div class="meta"><span class="pill">Surreal &amp; Fantasy</span></div>
   
-  <div class="row"><a class="open" href="https://nakeymasi-coder.github.io/Wonka-Monster-Generator/" target="_blank" rel="noopener">Open</a><a class="lesson" href="https://www.skool.com/the-glam-vault-9512/classroom/87bcf6dc?md=8df8d846526a4e3c8f19be451116dbc6" target="_blank" rel="noopener">Lesson</a></div>
+  <div class="row"><a class="open" href="https://nakeymasi-coder.github.io/Wonka-Monster-Generator/" target="_blank" rel="noopener">Open</a></div>
 </div>
 <div class="card" data-n="28" data-cat="Surreal &amp; Fantasy" data-title="candy dreamscape generator">
   <div class="ct">Candy Dreamscape Generator</div>
   <div class="meta"><span class="pill">Surreal &amp; Fantasy</span></div>
   
-  <div class="row"><a class="open" href="https://nakeymasi-coder.github.io/Candy_Dreamscape_Generatorindex.html/" target="_blank" rel="noopener">Open</a><a class="lesson" href="https://www.skool.com/the-glam-vault-9512/classroom/87bcf6dc?md=324ded1c66954a04b2bbbfc02ed61dba" target="_blank" rel="noopener">Lesson</a></div>
+  <div class="row"><a class="open" href="https://nakeymasi-coder.github.io/Candy_Dreamscape_Generatorindex.html/" target="_blank" rel="noopener">Open</a></div>
 </div>
 <div class="card" data-n="29" data-cat="Luxury &amp; Lifestyle" data-title="candy pop 90&#x27;s glam generator">
   <div class="ct">Candy Pop 90&#x27;s Glam Generator</div>
   <div class="meta"><span class="pill">Luxury &amp; Lifestyle</span></div>
   
-  <div class="row"><a class="open" href="https://nakeymasi-coder.github.io/Candy-Pop-90-s-Glam-Generator/" target="_blank" rel="noopener">Open</a><a class="lesson" href="https://www.skool.com/the-glam-vault-9512/classroom/87bcf6dc?md=084ba0d612904649996edfbb8c3abe4b" target="_blank" rel="noopener">Lesson</a></div>
+  <div class="row"><a class="open" href="https://nakeymasi-coder.github.io/Candy-Pop-90-s-Glam-Generator/" target="_blank" rel="noopener">Open</a></div>
 </div>
 <div class="card" data-n="30" data-cat="Affirmations &amp; Faith" data-title="weekday affirmation">
   <div class="ct">Weekday Affirmation</div>
   <div class="meta"><span class="pill">Affirmations &amp; Faith</span></div>
   
-  <div class="row"><a class="open" href="https://nakeymasi-coder.github.io/Glam-Weekday-Affirmation-Studio/" target="_blank" rel="noopener">Open</a><a class="lesson" href="https://www.skool.com/the-glam-vault-9512/classroom/87bcf6dc?md=26b97a557fd0474e89ce05c7d2b36d0e" target="_blank" rel="noopener">Lesson</a></div>
+  <div class="row"><a class="open" href="https://nakeymasi-coder.github.io/Glam-Weekday-Affirmation-Studio/" target="_blank" rel="noopener">Open</a></div>
 </div>
 <div class="card" data-n="31" data-cat="Affirmations &amp; Faith" data-title="affirmation prompt generator">
   <div class="ct">Affirmation Prompt Generator</div>
   <div class="meta"><span class="pill">Affirmations &amp; Faith</span></div>
   
-  <div class="row"><a class="open" href="https://nakeymasi-coder.github.io/Upgraded-Affirmation-Prompt-Generator/" target="_blank" rel="noopener">Open</a><a class="lesson" href="https://www.skool.com/the-glam-vault-9512/classroom/87bcf6dc?md=9a172cda3eed42a7a586926165ec7f16" target="_blank" rel="noopener">Lesson</a></div>
+  <div class="row"><a class="open" href="https://nakeymasi-coder.github.io/Upgraded-Affirmation-Prompt-Generator/" target="_blank" rel="noopener">Open</a></div>
 </div>
 <div class="card" data-n="32" data-cat="Affirmations &amp; Faith" data-title="glow &amp; grace generator">
   <div class="ct">Glow &amp; Grace Generator</div>
   <div class="meta"><span class="pill">Affirmations &amp; Faith</span></div>
   
-  <div class="row"><a class="open" href="https://glow-and-grace-generator.netlify.app/" target="_blank" rel="noopener">Open</a><a class="lesson" href="https://www.skool.com/the-glam-vault-9512/classroom/87bcf6dc?md=edfd59abf275455f8379c642162804f7" target="_blank" rel="noopener">Lesson</a></div>
+  <div class="row"><a class="open" href="https://glow-and-grace-generator.netlify.app/" target="_blank" rel="noopener">Open</a></div>
 </div>
 <div class="card" data-n="33" data-cat="Affirmations &amp; Faith" data-title="spiritual affirmation poster generator">
   <div class="ct">Spiritual Affirmation Poster Generator</div>
   <div class="meta"><span class="pill">Affirmations &amp; Faith</span></div>
   
-  <div class="row"><a class="open" href="https://spiritual-affirmation-app.netlify.app/" target="_blank" rel="noopener">Open</a><a class="lesson" href="https://www.skool.com/the-glam-vault-9512/classroom/87bcf6dc?md=7ed271d5cd5e438cbc9d1091906b694f" target="_blank" rel="noopener">Lesson</a></div>
+  <div class="row"><a class="open" href="https://spiritual-affirmation-app.netlify.app/" target="_blank" rel="noopener">Open</a></div>
 </div>
 <div class="card" data-n="34" data-cat="Games &amp; Learning" data-title="african american trivia">
   <div class="ct">African American Trivia</div>
-  <div class="meta"><span class="pill">Games &amp; Learning</span><span class="note">Build prompt in the lesson</span></div>
+  <div class="meta"><span class="pill">Games &amp; Learning</span><span class="note">Build prompt</span></div>
   
-  <div class="row"><a class="open" href="https://www.skool.com/the-glam-vault-9512/classroom/87bcf6dc?md=7930b4e47ad4492eaa906cd24d927f32" target="_blank" rel="noopener">Open</a><a class="lesson" href="https://www.skool.com/the-glam-vault-9512/classroom/87bcf6dc?md=7930b4e47ad4492eaa906cd24d927f32" target="_blank" rel="noopener">Lesson</a></div>
+  <div class="row"><button class="open" onclick="openPrompt(34)">View Prompt</button></div>
 </div>
 <div class="card" data-n="35" data-cat="Games &amp; Learning" data-title="bible quiz">
   <div class="ct">Bible Quiz</div>
   <div class="meta"><span class="pill">Games &amp; Learning</span></div>
   
-  <div class="row"><a class="open" href="https://nakeymasi-coder.github.io/Bible-Quiz-Game/" target="_blank" rel="noopener">Open</a><a class="lesson" href="https://www.skool.com/the-glam-vault-9512/classroom/87bcf6dc?md=aab78b2d1df6442980169205c34f84e5" target="_blank" rel="noopener">Lesson</a></div>
+  <div class="row"><a class="open" href="https://nakeymasi-coder.github.io/Bible-Quiz-Game/" target="_blank" rel="noopener">Open</a></div>
 </div>
 <div class="card" data-n="36" data-cat="Games &amp; Learning" data-title="would you rather">
   <div class="ct">Would You Rather</div>
   <div class="meta"><span class="pill">Games &amp; Learning</span></div>
   
-  <div class="row"><a class="open" href="https://nakeymasi-coder.github.io/Would-You-Rather/" target="_blank" rel="noopener">Open</a><a class="lesson" href="https://www.skool.com/the-glam-vault-9512/classroom/87bcf6dc?md=3cebc1792bf546c3bf4eb6b4ab78bf8c" target="_blank" rel="noopener">Lesson</a></div>
-</div>
-<div class="card" data-n="37" data-cat="Games &amp; Learning" data-title="spanish learning app">
-  <div class="ct">Spanish Learning App</div>
-  <div class="meta"><span class="pill">Games &amp; Learning</span><span class="note">Plays inside the lesson</span></div>
-  
-  <div class="row"><a class="open" href="https://www.skool.com/the-glam-vault-9512/classroom/87bcf6dc?md=f59bfb7ff43d478ea1bab320306cb3ad" target="_blank" rel="noopener">Open</a><a class="lesson" href="https://www.skool.com/the-glam-vault-9512/classroom/87bcf6dc?md=f59bfb7ff43d478ea1bab320306cb3ad" target="_blank" rel="noopener">Lesson</a></div>
+  <div class="row"><a class="open" href="https://nakeymasi-coder.github.io/Would-You-Rather/" target="_blank" rel="noopener">Open</a></div>
 </div>
 <div class="card" data-n="38" data-cat="Games &amp; Learning" data-title="interactive game prompt">
   <div class="ct">Interactive Game Prompt</div>
-  <div class="meta"><span class="pill">Games &amp; Learning</span><span class="note">Build prompt in the lesson</span></div>
+  <div class="meta"><span class="pill">Games &amp; Learning</span><span class="note">Build prompt</span></div>
   
-  <div class="row"><a class="open" href="https://www.skool.com/the-glam-vault-9512/classroom/87bcf6dc?md=3ac15a4c2e09498a9723d02ec4feb610" target="_blank" rel="noopener">Open</a><a class="lesson" href="https://www.skool.com/the-glam-vault-9512/classroom/87bcf6dc?md=3ac15a4c2e09498a9723d02ec4feb610" target="_blank" rel="noopener">Lesson</a></div>
+  <div class="row"><button class="open" onclick="openPrompt(38)">View Prompt</button></div>
 </div>
 <div class="card" data-n="39" data-cat="Games &amp; Learning" data-title="duo vs. battle generator">
   <div class="ct">Duo vs. Battle Generator</div>
   <div class="meta"><span class="pill">Games &amp; Learning</span></div>
   
-  <div class="row"><a class="open" href="https://live-duo-vs-generator.netlify.app/" target="_blank" rel="noopener">Open</a><a class="lesson" href="https://www.skool.com/the-glam-vault-9512/classroom/87bcf6dc?md=9fc423d33b564073bcac880283a5057e" target="_blank" rel="noopener">Lesson</a></div>
+  <div class="row"><a class="open" href="https://live-duo-vs-generator.netlify.app/" target="_blank" rel="noopener">Open</a></div>
 </div>
 <div class="card" data-n="40" data-cat="Holiday &amp; Christmas" data-title="christmas + new year&#x27;s premium prompt generator">
   <div class="ct">Christmas + New Year&#x27;s Premium Prompt Generator</div>
   <div class="meta"><span class="pill">Holiday &amp; Christmas</span></div>
   
-  <div class="row"><a class="open" href="https://holiday-prompt-lab.base44.app" target="_blank" rel="noopener">Open</a><a class="lesson" href="https://www.skool.com/the-glam-vault-9512/classroom/87bcf6dc?md=cbba09b331b144dab474c6701c65b37a" target="_blank" rel="noopener">Lesson</a></div>
+  <div class="row"><a class="open" href="https://holiday-prompt-lab.base44.app" target="_blank" rel="noopener">Open</a></div>
 </div>
 <div class="card" data-n="41" data-cat="Holiday &amp; Christmas" data-title="miss grinch glam generator">
   <div class="ct">Miss Grinch Glam Generator</div>
   <div class="meta"><span class="pill">Holiday &amp; Christmas</span><span class="note">Folder</span></div>
   
-  <div class="row"><a class="open" href="https://drive.google.com/drive/folders/1__0K4HThADYgxnNkL33F7BSEM2_dvLLV?usp=sharing" target="_blank" rel="noopener">Open</a><a class="lesson" href="https://www.skool.com/the-glam-vault-9512/classroom/87bcf6dc?md=22bab45415494012877efbdd124a401c" target="_blank" rel="noopener">Lesson</a></div>
+  <div class="row"><a class="open" href="https://drive.google.com/drive/folders/1__0K4HThADYgxnNkL33F7BSEM2_dvLLV?usp=sharing" target="_blank" rel="noopener">Open</a></div>
 </div>
 <div class="card" data-n="42" data-cat="Holiday &amp; Christmas" data-title="grinch full prompt generator">
   <div class="ct">Grinch Full Prompt Generator</div>
   <div class="meta"><span class="pill">Holiday &amp; Christmas</span></div>
   
-  <div class="row"><a class="open" href="https://nakeymasi-coder.github.io/Upgraded-Grinch-Full-Prompt-Generator/" target="_blank" rel="noopener">Open</a><a class="lesson" href="https://www.skool.com/the-glam-vault-9512/classroom/87bcf6dc?md=dbef2ac2d8df428685fa5893e077a539" target="_blank" rel="noopener">Lesson</a></div>
+  <div class="row"><a class="open" href="https://nakeymasi-coder.github.io/Upgraded-Grinch-Full-Prompt-Generator/" target="_blank" rel="noopener">Open</a></div>
 </div>
 <div class="card" data-n="43" data-cat="Holiday &amp; Christmas" data-title="holiday image generator">
   <div class="ct">Holiday Image Generator</div>
   <div class="meta"><span class="pill">Holiday &amp; Christmas</span><span class="note">Opens in Grok</span></div>
   
-  <div class="row"><a class="open" href="https://grok.com/share/c2hhcmQtMw_d54838bc-0df6-4c97-88ea-7d8692ebaad3" target="_blank" rel="noopener">Open</a><a class="lesson" href="https://www.skool.com/the-glam-vault-9512/classroom/87bcf6dc?md=03871cfadd2e4bad821ae553d9e6a8d6" target="_blank" rel="noopener">Lesson</a></div>
+  <div class="row"><a class="open" href="https://grok.com/share/c2hhcmQtMw_d54838bc-0df6-4c97-88ea-7d8692ebaad3" target="_blank" rel="noopener">Open</a></div>
 </div>
 <div class="card" data-n="44" data-cat="Holiday &amp; Christmas" data-title="christmas + new year&#x27;s design prompt generator">
   <div class="ct">Christmas + New Year&#x27;s Design Prompt Generator</div>
   <div class="meta"><span class="pill">Holiday &amp; Christmas</span><span class="note">Opens in Grok</span></div>
   
-  <div class="row"><a class="open" href="https://grok.com/share/c2hhcmQtMw_40f0cfd3-fcd2-4d5d-9d04-387947775be6" target="_blank" rel="noopener">Open</a><a class="lesson" href="https://www.skool.com/the-glam-vault-9512/classroom/87bcf6dc?md=a64ab9ee2e3b4879ba2e0795590a08e5" target="_blank" rel="noopener">Lesson</a></div>
+  <div class="row"><a class="open" href="https://grok.com/share/c2hhcmQtMw_40f0cfd3-fcd2-4d5d-9d04-387947775be6" target="_blank" rel="noopener">Open</a></div>
 </div>
 <div class="card" data-n="45" data-cat="Events &amp; Occasions" data-title="caribbean carnival generator">
   <div class="ct">Caribbean Carnival Generator</div>
   <div class="meta"><span class="pill">Events &amp; Occasions</span></div>
   <div class="pw">Password: <b>GlowCarnival44</b></div>
-  <div class="row"><a class="open" href="https://caribbean-prompt-app.netlify.app/" target="_blank" rel="noopener">Open</a><a class="lesson" href="https://www.skool.com/the-glam-vault-9512/classroom/87bcf6dc?md=013356ba35d94879b328cdb3d31c4000" target="_blank" rel="noopener">Lesson</a></div>
+  <div class="row"><a class="open" href="https://caribbean-prompt-app.netlify.app/" target="_blank" rel="noopener">Open</a></div>
 </div>
 <div class="card" data-n="46" data-cat="Events &amp; Occasions" data-title="glam event &amp; prompt studio">
   <div class="ct">GLAM Event &amp; Prompt Studio</div>
   <div class="meta"><span class="pill">Events &amp; Occasions</span></div>
   <div class="pw">Password: <b>GlamStudio44</b></div>
-  <div class="row"><a class="open" href="https://glam-event-app.netlify.app/" target="_blank" rel="noopener">Open</a><a class="lesson" href="https://www.skool.com/the-glam-vault-9512/classroom/87bcf6dc?md=dfc5530ebad74baa897c3ef3fbadf187" target="_blank" rel="noopener">Lesson</a></div>
+  <div class="row"><a class="open" href="https://glam-event-app.netlify.app/" target="_blank" rel="noopener">Open</a></div>
 </div>
 <div class="card" data-n="47" data-cat="Events &amp; Occasions" data-title="women&#x27;s day generator">
   <div class="ct">Women&#x27;s Day Generator</div>
   <div class="meta"><span class="pill">Events &amp; Occasions</span></div>
   
-  <div class="row"><a class="open" href="https://nakeymasi-coder.github.io/Women-s-Day-Prompt-Generator/" target="_blank" rel="noopener">Open</a><a class="lesson" href="https://www.skool.com/the-glam-vault-9512/classroom/87bcf6dc?md=a61596f914b94863b141117adb81d12e" target="_blank" rel="noopener">Lesson</a></div>
+  <div class="row"><a class="open" href="https://nakeymasi-coder.github.io/Women-s-Day-Prompt-Generator/" target="_blank" rel="noopener">Open</a></div>
 </div>
 <div class="card" data-n="48" data-cat="Events &amp; Occasions" data-title="birthday flyer prompt generator">
   <div class="ct">Birthday Flyer Prompt Generator</div>
   <div class="meta"><span class="pill">Events &amp; Occasions</span></div>
   
-  <div class="row"><a class="open" href="https://nakeymasi-coder.github.io/Upgraded-Birthday-Prompt-Gnerator/" target="_blank" rel="noopener">Open</a><a class="lesson" href="https://www.skool.com/the-glam-vault-9512/classroom/87bcf6dc?md=584cadcb4a6a4e398b82f4568f375727" target="_blank" rel="noopener">Lesson</a></div>
+  <div class="row"><a class="open" href="https://nakeymasi-coder.github.io/Upgraded-Birthday-Prompt-Gnerator/" target="_blank" rel="noopener">Open</a></div>
 </div>
 <div class="card" data-n="49" data-cat="Halloween" data-title="chatgpt halloween generator">
   <div class="ct">ChatGPT Halloween Generator</div>
   <div class="meta"><span class="pill">Halloween</span></div>
   
-  <div class="row"><a class="open" href="https://live-halloween-generator.netlify.app/" target="_blank" rel="noopener">Open</a><a class="lesson" href="https://www.skool.com/the-glam-vault-9512/classroom/87bcf6dc?md=3b818f01bb07401592ff20c6827cdc34" target="_blank" rel="noopener">Lesson</a></div>
+  <div class="row"><a class="open" href="https://live-halloween-generator.netlify.app/" target="_blank" rel="noopener">Open</a></div>
 </div>
 <div class="card" data-n="50" data-cat="Halloween" data-title="gemini halloween generator">
   <div class="ct">Gemini Halloween Generator</div>
   <div class="meta"><span class="pill">Halloween</span></div>
   
-  <div class="row"><a class="open" href="https://gemini-live-halloween-generator.netlify.app/" target="_blank" rel="noopener">Open</a><a class="lesson" href="https://www.skool.com/the-glam-vault-9512/classroom/87bcf6dc?md=000739dd82ae4896af01af33299ec4a4" target="_blank" rel="noopener">Lesson</a></div>
+  <div class="row"><a class="open" href="https://gemini-live-halloween-generator.netlify.app/" target="_blank" rel="noopener">Open</a></div>
 </div>
 <div class="card" data-n="51" data-cat="Halloween" data-title="halloween creative studio">
   <div class="ct">Halloween Creative Studio</div>
   <div class="meta"><span class="pill">Halloween</span><span class="note">HTML file — download &amp; open</span></div>
   
-  <div class="row"><a class="open" href="https://drive.google.com/file/d/1wadaJpa8REPV_2ZmeUPApCdPnPQwZW6k/view?usp=sharing" target="_blank" rel="noopener">Open</a><a class="lesson" href="https://www.skool.com/the-glam-vault-9512/classroom/87bcf6dc?md=5e748dbb7eee4dd992c294a7ffc14fd0" target="_blank" rel="noopener">Lesson</a></div>
+  <div class="row"><a class="open" href="https://drive.google.com/file/d/1wadaJpa8REPV_2ZmeUPApCdPnPQwZW6k/view?usp=sharing" target="_blank" rel="noopener">Open</a></div>
 </div>
 <div class="card" data-n="52" data-cat="Halloween" data-title="halloween prompt studio">
   <div class="ct">Halloween Prompt Studio</div>
   <div class="meta"><span class="pill">Halloween</span><span class="note">HTML file — download &amp; open</span></div>
   
-  <div class="row"><a class="open" href="https://drive.google.com/file/d/186g9x6nFS_iB6jlw-tFOaCrkYP_9pNiY/view?usp=sharing" target="_blank" rel="noopener">Open</a><a class="lesson" href="https://www.skool.com/the-glam-vault-9512/classroom/87bcf6dc?md=e928e31fb6a346009c03b483c57254cd" target="_blank" rel="noopener">Lesson</a></div>
+  <div class="row"><a class="open" href="https://drive.google.com/file/d/186g9x6nFS_iB6jlw-tFOaCrkYP_9pNiY/view?usp=sharing" target="_blank" rel="noopener">Open</a></div>
 </div>
 <div class="card" data-n="53" data-cat="Luxury &amp; Lifestyle" data-title="zodiac prompt generator">
   <div class="ct">Zodiac Prompt Generator</div>
   <div class="meta"><span class="pill">Luxury &amp; Lifestyle</span></div>
   <div class="pw">Password: <b>GlowZodiac44</b></div>
-  <div class="row"><a class="open" href="https://zodiac-prompt-app.netlify.app/" target="_blank" rel="noopener">Open</a><a class="lesson" href="https://www.skool.com/the-glam-vault-9512/classroom/87bcf6dc?md=af851ab361424d18adb77273e8487978" target="_blank" rel="noopener">Lesson</a></div>
+  <div class="row"><a class="open" href="https://zodiac-prompt-app.netlify.app/" target="_blank" rel="noopener">Open</a></div>
 </div>
 <div class="card" data-n="54" data-cat="Luxury &amp; Lifestyle" data-title="updated zodiac prompt generator">
   <div class="ct">Updated Zodiac Prompt Generator</div>
   <div class="meta"><span class="pill">Luxury &amp; Lifestyle</span></div>
   
-  <div class="row"><a class="open" href="https://nakeymasi-coder.github.io/Upgraded-Zodiac-Prompt-Generator/" target="_blank" rel="noopener">Open</a><a class="lesson" href="https://www.skool.com/the-glam-vault-9512/classroom/87bcf6dc?md=0cbd455b930745d3a3207db1794b5632" target="_blank" rel="noopener">Lesson</a></div>
+  <div class="row"><a class="open" href="https://nakeymasi-coder.github.io/Upgraded-Zodiac-Prompt-Generator/" target="_blank" rel="noopener">Open</a></div>
 </div>
 <div class="card" data-n="55" data-cat="Events &amp; Occasions" data-title="father&#x27;s day fishing prompt generator">
   <div class="ct">Father&#x27;s Day Fishing Prompt Generator</div>
   <div class="meta"><span class="pill">Events &amp; Occasions</span></div>
   <div class="pw">Password: <b>fishingvault</b></div>
-  <div class="row"><a class="open" href="http://reel-queens-fishing-generator.netlify.app/" target="_blank" rel="noopener">Open</a><a class="lesson" href="https://www.skool.com/the-glam-vault-9512/classroom/87bcf6dc?md=b5fb6eb488904c3ca35e9a6a43e654c6" target="_blank" rel="noopener">Lesson</a></div>
+  <div class="row"><a class="open" href="http://reel-queens-fishing-generator.netlify.app/" target="_blank" rel="noopener">Open</a></div>
 </div>
 <div class="card" data-n="56" data-cat="Events &amp; Occasions" data-title="little grad flyer generator">
   <div class="ct">Little Grad Flyer Generator</div>
   <div class="meta"><span class="pill">Events &amp; Occasions</span></div>
   
-  <div class="row"><a class="open" href="https://nakeymasi-coder.github.io/Little-Grad-Flyer-Generator/" target="_blank" rel="noopener">Open</a><a class="lesson" href="https://www.skool.com/the-glam-vault-9512/classroom/87bcf6dc?md=68897640890f41cca2678f34c23a00f7" target="_blank" rel="noopener">Lesson</a></div>
+  <div class="row"><a class="open" href="https://nakeymasi-coder.github.io/Little-Grad-Flyer-Generator/" target="_blank" rel="noopener">Open</a></div>
 </div>
 <div class="card" data-n="57" data-cat="Events &amp; Occasions" data-title="five-in-one graduation generator">
   <div class="ct">Five-in-One Graduation Generator</div>
   <div class="meta"><span class="pill">Events &amp; Occasions</span></div>
   
-  <div class="row"><a class="open" href="https://nakeymasi-coder.github.io/Updated-Graduation-Prompt-Generator/#allinclusive" target="_blank" rel="noopener">Open</a><a class="lesson" href="https://www.skool.com/the-glam-vault-9512/classroom/87bcf6dc?md=739f07a146aa41a5894bc36e62f45fd7" target="_blank" rel="noopener">Lesson</a></div>
+  <div class="row"><a class="open" href="https://nakeymasi-coder.github.io/Updated-Graduation-Prompt-Generator/#allinclusive" target="_blank" rel="noopener">Open</a></div>
 </div>
 <div class="card" data-n="58" data-cat="Events &amp; Occasions" data-title="glamteenth studio prompt generator">
   <div class="ct">Glamteenth Studio Prompt Generator</div>
   <div class="meta"><span class="pill">Events &amp; Occasions</span></div>
   <div class="pw">Password: <b>GoldenMelanin</b></div>
-  <div class="row"><a class="open" href="https://glamteenth-ai-studio-app.netlify.app/" target="_blank" rel="noopener">Open</a><a class="lesson" href="https://www.skool.com/the-glam-vault-9512/classroom/87bcf6dc?md=fc80b1ca8e254a1a9294c27260595a27" target="_blank" rel="noopener">Lesson</a></div>
+  <div class="row"><a class="open" href="https://glamteenth-ai-studio-app.netlify.app/" target="_blank" rel="noopener">Open</a></div>
 </div>
 <div class="card" data-n="59" data-cat="Build Prompts" data-title="invitation prompt">
   <div class="ct">Invitation Prompt</div>
-  <div class="meta"><span class="pill">Build Prompts</span><span class="note">Build prompt in the lesson</span></div>
+  <div class="meta"><span class="pill">Build Prompts</span><span class="note">Build prompt</span></div>
   
-  <div class="row"><a class="open" href="https://www.skool.com/the-glam-vault-9512/classroom/87bcf6dc?md=3d06008f4f574e5489c8d432c034b7f2" target="_blank" rel="noopener">Open</a><a class="lesson" href="https://www.skool.com/the-glam-vault-9512/classroom/87bcf6dc?md=3d06008f4f574e5489c8d432c034b7f2" target="_blank" rel="noopener">Lesson</a></div>
+  <div class="row"><button class="open" onclick="openPrompt(59)">View Prompt</button></div>
 </div>
 <div class="card" data-n="60" data-cat="Build Prompts" data-title="interior design">
   <div class="ct">Interior Design</div>
-  <div class="meta"><span class="pill">Build Prompts</span><span class="note">Build prompt in the lesson</span></div>
+  <div class="meta"><span class="pill">Build Prompts</span><span class="note">Build prompt</span></div>
   
-  <div class="row"><a class="open" href="https://www.skool.com/the-glam-vault-9512/classroom/87bcf6dc?md=df511dc8a8804df892fdebbcfe198983" target="_blank" rel="noopener">Open</a><a class="lesson" href="https://www.skool.com/the-glam-vault-9512/classroom/87bcf6dc?md=df511dc8a8804df892fdebbcfe198983" target="_blank" rel="noopener">Lesson</a></div>
+  <div class="row"><button class="open" onclick="openPrompt(60)">View Prompt</button></div>
 </div>
 <div class="card" data-n="61" data-cat="Build Prompts" data-title="journal planner">
   <div class="ct">Journal Planner</div>
-  <div class="meta"><span class="pill">Build Prompts</span><span class="note">Build prompt in the lesson</span></div>
+  <div class="meta"><span class="pill">Build Prompts</span><span class="note">Build prompt</span></div>
   
-  <div class="row"><a class="open" href="https://www.skool.com/the-glam-vault-9512/classroom/87bcf6dc?md=f43eb72f692a4a608b880721f8279cb7" target="_blank" rel="noopener">Open</a><a class="lesson" href="https://www.skool.com/the-glam-vault-9512/classroom/87bcf6dc?md=f43eb72f692a4a608b880721f8279cb7" target="_blank" rel="noopener">Lesson</a></div>
+  <div class="row"><button class="open" onclick="openPrompt(61)">View Prompt</button></div>
 </div>
 <div class="card" data-n="62" data-cat="Build Prompts" data-title="song">
   <div class="ct">Song</div>
-  <div class="meta"><span class="pill">Build Prompts</span><span class="note">Build prompt in the lesson</span></div>
+  <div class="meta"><span class="pill">Build Prompts</span><span class="note">Build prompt</span></div>
   
-  <div class="row"><a class="open" href="https://www.skool.com/the-glam-vault-9512/classroom/87bcf6dc?md=549d98ebf9b343f8bfd62317e447fd49" target="_blank" rel="noopener">Open</a><a class="lesson" href="https://www.skool.com/the-glam-vault-9512/classroom/87bcf6dc?md=549d98ebf9b343f8bfd62317e447fd49" target="_blank" rel="noopener">Lesson</a></div>
+  <div class="row"><button class="open" onclick="openPrompt(62)">View Prompt</button></div>
 </div>
 <div class="card" data-n="63" data-cat="Build Prompts" data-title="website">
   <div class="ct">Website</div>
-  <div class="meta"><span class="pill">Build Prompts</span><span class="note">Build prompt in the lesson</span></div>
+  <div class="meta"><span class="pill">Build Prompts</span><span class="note">Build prompt</span></div>
   
-  <div class="row"><a class="open" href="https://www.skool.com/the-glam-vault-9512/classroom/87bcf6dc?md=cfb36139a9c045648a7f7aae5f9d7ed4" target="_blank" rel="noopener">Open</a><a class="lesson" href="https://www.skool.com/the-glam-vault-9512/classroom/87bcf6dc?md=cfb36139a9c045648a7f7aae5f9d7ed4" target="_blank" rel="noopener">Lesson</a></div>
+  <div class="row"><button class="open" onclick="openPrompt(63)">View Prompt</button></div>
 </div>
 <div class="card" data-n="64" data-cat="Ads &amp; Business" data-title="live prompt generators">
   <div class="ct">Live Prompt Generators</div>
   <div class="meta"><span class="pill">Ads &amp; Business</span><span class="note">Opens in Gemini</span></div>
   
-  <div class="row"><a class="open" href="https://gemini.google.com/share/2ea231091c27" target="_blank" rel="noopener">Open</a><a class="lesson" href="https://www.skool.com/the-glam-vault-9512/classroom/87bcf6dc?md=a09815363e494bf49798ef596ff31d86" target="_blank" rel="noopener">Lesson</a></div>
+  <div class="row"><a class="open" href="https://gemini.google.com/share/2ea231091c27" target="_blank" rel="noopener">Open</a></div>
 </div>
 <div class="card" data-n="65" data-cat="Luxury &amp; Lifestyle" data-title="gold mansion generator — html code">
   <div class="ct">Gold Mansion Generator — HTML Code</div>
-  <div class="meta"><span class="pill">Luxury &amp; Lifestyle</span><span class="note">HTML code in the lesson</span></div>
+  <div class="meta"><span class="pill">Luxury &amp; Lifestyle</span></div>
   
-  <div class="row"><a class="open" href="https://www.skool.com/the-glam-vault-9512/classroom/87bcf6dc?md=7a3c1bef3a2f4a8382a95611abeb0c01" target="_blank" rel="noopener">Open</a><a class="lesson" href="https://www.skool.com/the-glam-vault-9512/classroom/87bcf6dc?md=7a3c1bef3a2f4a8382a95611abeb0c01" target="_blank" rel="noopener">Lesson</a></div>
+  <div class="row"><a class="open" href="https://nakeymasi-coder.github.io/gold-mansion-generator/" target="_blank" rel="noopener">Open</a></div>
 </div>
 <div class="card" data-n="66" data-cat="Surreal &amp; Fantasy" data-title="surreal html prompt">
   <div class="ct">Surreal HTML Prompt</div>
   <div class="meta"><span class="pill">Surreal &amp; Fantasy</span></div>
   
-  <div class="row"><a class="open" href="https://upgraded-the-scroll-stopping-surreal.netlify.app/" target="_blank" rel="noopener">Open</a><a class="lesson" href="https://www.skool.com/the-glam-vault-9512/classroom/87bcf6dc?md=377b15eb0386414e8bb4c031442bf3a4" target="_blank" rel="noopener">Lesson</a></div>
+  <div class="row"><a class="open" href="https://upgraded-the-scroll-stopping-surreal.netlify.app/" target="_blank" rel="noopener">Open</a></div>
 </div></div>
   <p class="none" id="none">Nothing matches that search.</p>
+</div>
+<div class="overlay" id="overlay">
+  <div class="sheet">
+    <h2 id="ptitle"></h2>
+    <pre id="ptext"></pre>
+    <div class="row"><button class="copy" id="copybtn" onclick="copyPrompt()">Copy the Prompt</button><button class="close" onclick="closePrompt()">Close</button></div>
+  </div>
 </div>
 <script>
   var cat = "All";
@@ -475,6 +473,29 @@
     document.getElementById("none").style.display = shown===0 ? "block" : "none";
   }
   render();
+  var PROMPT_TEXTS = {"34": "Act like an expert HTML, CSS, and JavaScript game-generator builder.\n\nCreate a full single-file interactive website for an:\nAfrican American Trivia Game\n\nBuild it as one complete HTML file with embedded CSS and JavaScript only.\nDo not give partial code.\nDo not leave out any working features.\nGive me the full working code in one shot.\n\nThe website must include:\n- a beautiful start screen\n- a hero or cover section\n- category selection cards\n- a setup screen\n- a playable game screen\n- a results screen\n- a return home button that works from every screen\n\nThe game must have:\n- built-in trivia mode\n- custom builder mode\n- 10 built-in questions total\n- timer per question\n- sound on/off option\n- score tracking\n- question progress tracking\n- restart button\n- play again button\n- return home button\n- randomize settings button\n- quick start option\n\nFor built-in trivia:\n- use 10 African American trivia questions\n- make the questions clear, varied, and beginner-friendly\n- include 4 answer choices per question\n- make sure each question has one correct answer\n\nFor custom builder mode:\n- let the user type their own questions\n- let the user add 4 answer choices\n- let the user choose the correct answer\n- let the user save multiple custom questions\n  let the user delete individual questions\n\n- let the user delete individual questions\n- let the user delete all questions\n- let the user play the custom quiz they created\n\nDesign requirements:\n- modern, attractive, and mobile-friendly\n- glassmorphism or stylish card-based layout\n- bold buttons\n- clean spacing\n- animated effects\n- make it feel like a real app\n\nCode requirements:\n- HTML, CSS, and JavaScript only\n- everything in one file\n- all buttons must work\n- quick start must work\n- timer must work\n- score must update correctly\n- results screen must work\n- category selection must work\n\nAt the top of the code, include:\n- the title: African American Trivia Game\n- a short subtitle explaining what the game does\n\nOutput the complete HTML code only.\nNo explanation.", "38": "CUSTOM INTERACTIVE\nCHATGPT GAME\nI want you to act like an expert HTML, CSS, and JavaScript game-generator builder.\n\nCreate a full single-file interactive website for a:\n\n[INSERT THE TYPE OF INTERACTIVE GAME GENERATOR HERE]\n\nExamples:\n\n- Bible quiz generator\n\n- trivia game generator\n\n- would-you-rather generator\n\n- matching game generator\n\n- spin-the-wheel game generator\n\n- scavenger hunt generator\n\n- classroom quiz generator\n\n- party game generator\n\n- custom question game generator\n\nBuild it as one complete HTML file with embedded CSS and JavaScript only.\n\nDo not leave anything out.\n\nDo not shorten the code.\n\nDo not give me pieces.\n\nGive me the full working code in one shot.\n\nThe generator must include a beautiful, modern, beginner-friendly design with:\n\n- a pretty start screen\n\n- a game cover image area or hero section\n\n- animated effects\n\n- category cards\n\n- a setup screen\n\n- a playable game screen\n\n- a results screen\n\n- a return home button that works from every screen\n\nThe generator must have these features:\n\n- built-in game mode\n\n- custom builder mode\n\n- timer per question\n\n- sound on/off option\n\n- score tracking\n\n- question progress tracking\n\n- restart button\n\n- play again button\n\n- return home button\n\n- randomize settings button\n\n- quick start option\n\n- category selection cards\n\nFor the built-in game content:\n\n- include a minimum of 50 questions total\n\n- do NOT only give 5 questions\n\n- each category should have enough questions to actually play multiple rounds\n\n- if there are difficulty levels, create enough questions for easy, medium, and hard\n\n- make the questions varied, clear, and not repetitive\n\nFor the custom builder mode:\n\n- let the user type their own questions\n\n- let the user type 4 answer choices\n\n- let the user select the correct answer\n\n- let the user save multiple custom questions\n\n- let the user delete individual custom questions\n\n- let the user delete all custom questions\n\n- let the user play the custom quiz they created\n\nFor the design:\n\n- make it visually attractive\n\n- use glassmorphism or modern card styling\n\n- use bold buttons\n\n- make it feel like a real interactive app\n\n- make it mobile-friendly\n\n- keep spacing clean\n\n- make the start screen impressive\n\nFor the code:\n\n- use HTML, CSS, and JavaScript only\n\n- keep everything in one file\n\n- make all buttons functional\n\n- make sure return home works correctly\n\n- make sure quick start works correctly\n\n- make sure the timer works correctly\n\n- make sure the score updates correctly\n\n- make sure the result screen works correctly\n\n- make sure category selection updates correctly\n\nAt the top of the code, include a title for the generator based on:\n\n[INSERT GENERATOR NAME HERE]\n\nAlso include a short subtitle that explains what the generator does.\n\nImportant:\n\n- minimum 50 built-in questions total\n\n- full code only\n\n- no placeholders unless clearly labeled for the user to edit\n\n- no missing JavaScript\n\n- no partial answer\n\n- no explanation first\n\n- output the complete HTML code only", "59": "INVITATION PROMPT\nI need a full html code for an AI generator Invitation.Create a [type of design] for\n[event/person/name] in a [specific visual style]. Use a [background setting] with [lighting\nstyle], [mood], and [main color palette]. Feature [subject description] in a [pose] wearing\n[outfit] with [hair details], [makeup details], [accessories], and holding [props]. Arrange the\ndesign with [composition layout] and include [photo frames / layered cutouts /\nforeground objects / graphic elements]. Use [font style] typography for [headline],\n[subheadline], [name], [date], [time], [location], [dress code], [RSVP], and [extra event\ndetails]. Add [decor elements] such as [sparkles / flowers / balloons / money / zodiac signs\n/ neon effects / QR code / glitter / skyline lights]. Make the final design feel [emotion\nwords], with [editorial / scrapbook / luxury / nightlife / Barbiecore / couture / kids-party]\nenergy, using high detail, layered composition, polished typography, premium invitation\nstyling, dramatic focal hierarchy, social-media-ready layout, and visually rich event\nbranding. I want a 30 options per dropdown, the first options are always none and the\nrest is to be alphabetized. Also add 15 presets. I want full camera control, full light and\nshadow control. Make the background suitable for the subject matter. Now I also want\nthis to generate both a photo prompt as well as a video script prompt, this way the user\ncan generate one or the other. Each render must feature a uniquely distinct face, pose,\nand styling while maintaining the same overall aesthetic. Make sure I have a randomizer,\nclear all and copy button, and to be able to select multiple options. Create a\ndownloadable HTML file artifact", "60": "I need a full html code for an AI generator for interior design Create a [output type] for a\n[room type] inside a [home type] with a [space size] layout. Design the space in a [design\nstyle] style with a [mood / vibe] atmosphere. Use a [color palette] color story with\n[materials / finishes] and [textile / fabric style] details throughout the room.\n\nInclude [furniture style] furniture arranged in a [layout style] layout that supports\n[lifestyle needs]. Add [lighting style] lighting, [flooring], [wall treatment], and\n[architectural features] to enhance the overall look. Style the room with [decor /\naccessories] and make it feel appropriate for [designed for] with a [budget level]\napproach.\n\nIf this is an image-based concept, present it as a [image style] shown from a [camera\nview] perspective. Make the final result feel polished, cohesive, realistic, visually\ninspiring, and suitable for interior design planning, mood boarding, or client\npresentation. I want a 30 options per dropdown, the first options are always none and\nthe rest is to be alphabetized. Also add 15 presets. I want full camera control, full light\nand shadow control. Make the background suitable for the subject matter. Now I also\nwant this to generate both a photo prompt as well as a video script prompt, this way the\nuser can generate one or the other. Each render must feature a uniquely distinct face,\npose, and styling while maintaining the same overall aesthetic. Make sure I have a\nrandomizer, clear all and copy button, and to be able to select multiple options Create a\ndownloadable HTML file artifact", "61": "I want you to act like an expert HTML, CSS, and JavaScript generator builder.\n\nCreate a full single-file interactive website for a:\n\nPlanner and Journal Inserts Generator\n\nPurpose:\n\nA generator that helps users create custom planner inserts, journal inserts, printable\npage layouts, insert bundles, and AI-ready prompts for functional and decorative\nplanner products.\n\nBuild it as one complete HTML file with embedded CSS and JavaScript only.\n\nGive me the full working code in one shot.\n\nDo not give partial code.\n\nThe generator should include:\n\n- start screen\n\n- hero section\n\n- preset cards\n\n- inspiration cards\n\n- setup form\n\n- output section\n\n- return home button\n\n- responsive design for desktop and mobile\n\n- polished card-based, tabbed, or accordion-style layout\n\nThe generator must have:\n\n- quick start\n\n- custom builder mode\n\n- preset mode\n\n- inspiration mode\n\n- randomize button\n\n- clear all button\n\n- copy output button\n\n- download output as text button\n\n- generate button\n\n- smooth transitions\n\n- multi-select dropdowns where needed\n\n- custom text inputs\n\n- textarea fields\n\n- live output preview\n\n- section-by-section builder layout\n\n- working preset fill\n\n- fully working buttons\n\nImportant build rules:\n\n- Every dropdown must have at least 30 options.\n\n- The first option in every dropdown must be None.\n\n- Alphabetize all remaining options.\n\n- Do not reduce the number of options.\n\n- Add at least 15 useful presets.\n\n- Make sure multi-select works.\n\n- Make sure copy, randomizer, clear all, and presets work.\n\n- Users must be able to combine multiple sections on one insert.\n\nThe generator must create:\n\n- planner insert concepts\n\n- journal insert concepts\n\n- printable insert layout prompts\n\n- AI-ready design prompts\n\n- styled mockup prompts\n\n- product-ready insert descriptions\n\n- bundle ideas\n\n- listing descriptions for selling inserts\n\nInclude categories for:\n\n1. Insert type\n\n2. Audience\n\n3. Theme\n\n4. Use case\n\n5. Page size\n\n6. Orientation\n\n7. Layout style\n\n8. Insert sections\n\n9. Header elements\n\n10. Footer elements\n\n11. Tracker elements\n\n12. Journal elements\n\n13. Planner elements\n\n14. Decorative style\n\n15. Font style\n\n16. Color palette\n\n17. Border style\n\n18. Line style\n\n19. Icon style\n\n20. Binding style\n\n21. Paper style\n\n22. Productivity features\n\n23. Wellness features\n\n24. Faith-based features\n\n25. Business/content features\n\n26. Finance features\n\n27. Personalization\n\n28. Seasonal style\n\n29. Extra embellishments\n\n30. Custom notes\n\nSupport combining sections on one page, such as:\n\n- planner + notes\n\n- gratitude + reflection\n\n- habits + mood + water\n\n- prayer + scripture + notes\n\n- goals + tasks + schedule\n\n- budget + expenses + savings\n\n- content plan + posting checklist + notes\n\n- self-care + mood + affirmations\n\nEach result should include:\n\n- insert title\n\n- insert type\n\n- audience\n\n- theme\n\n- layout description\n\n- selected sections\n\n- design style\n\n- color/style direction\n\n- personalization details\n\n- printable insert concept\n\n- AI-ready design prompt\n\n- styled mockup prompt\n\n- optional product description\n\n- optional bundle idea\n\nAdd at least 15 presets for planner and journal insert themes.\n\nAdd inspiration cards for:\n\n- productivity\n\n- faith\n\n- wellness\n\n- budgeting\n\n- content creation\n\n- business planning\n\n- self-care\n\n- journaling\n\n- routines\n\n- seasonal planning\n\nThe design should feel polished, elegant, beginner-friendly, and easy to use.\n\nMake all buttons functional.\n\nMake the layout fully responsive.\n\nReturn the complete full HTML file only.\n\nCreate a downloadable HTML file artifact.", "62": "Act like an expert HTML, CSS, and JavaScript generator builder.\n\nCreate a full single-file interactive Song Generator website with embedded HTML, CSS,\nand JavaScript only.\n\nThe generator must help users create song titles, alternate titles, concepts, hooks,\nchoruses, song structures, intros, outros, full lyrics, and a Suno-ready paste block.\n\nInclude:\n\n    landing screen\n    hero section\n    preset cards\n    inspiration cards\n    quick start, preset mode, and custom builder mode\n    randomize, clear, generate, copy, save/load preset, and return home buttons\n    mobile-friendly responsive layout\n    separate output boxes\n\nThe output must include:\n\n    Song Title\n    Alternate Title\n    Song Concept\n    Hook Idea\n    Chorus Idea\n    Song Structure\n    Style Prompt\n    Full Lyrics\n    Intro\n    Outro\n    Suno Paste Block\n\nUse genre-aware lyric writing based on mood, theme, audience, tone, and message.\nFormat lyrics with sections like Verse, Chorus, Bridge, and Outro.\n\nInclude at least 15 presets, inspiration cards, multi-select dropdowns where needed, and a\ncustom section for custom title, intro, outro, style prompt, and lyrics.\n\nFor every dropdown:\n\n    first option must be None\n    include at least 30 options\n    alphabetize the rest\n\nIf custom lyrics are entered, they override generated lyrics.\n\nReturn the complete full HTML file only.\n\nCreate a downloadable HTML file artifact", "63": "Build a premium, full-featured, mobile-friendly **Website Prompt Generator** as a single\ncomplete HTML file with embedded CSS and JavaScript.\n\nThis generator should help users create high-quality AI prompts for website copy,\nstructure, styling, and page planning.\n\nThe tool must include:\n\n- a polished luxury-modern interface\n\n- organized form sections\n\n- dropdowns with at least 30 alphabetized options each\n\n- multi-select where appropriate\n\n- text fields and textareas\n\n- 15 presets\n\n- Generate Prompt button\n\n- Copy Prompt button\n\n- Clear Form button\n\n- large output textarea\n\n- fully working JavaScript\n\n- fully responsive layout\n\n- full HTML file only\n\nThe generator title should be:\n\n**AI Website Copy + Design Prompt Generator**\n\nThe form must include these categories:\n\n- Brand / Business Name\n\n- Website Type\n\n- Business / Brand Type\n\n- Target Audience\n\n- Main Website Goal\n\n- Page Type\n\n- Brand Personality / Vibe\n\n- Website Style\n\n- Color Palette\n\n- Tone of Voice\n\n- Image Style / Visual Direction\n\n- Sections To Include\n\n- Layout Style\n\n- Headline Style\n\n- Button Style / CTA Feel\n\n- Must-Have Features\n\n- Must-Avoid\n\n- Main Offer / Product / Service\n\n- Primary Call To Action\n\n- SEO Keyword / Focus Phrase\n\n- Inspiration / Reference Direction\n\n- Extra Notes\n\n- Output Type\n\nThe final generated prompt should create a polished website planning prompt that\ncovers:\n\n- what kind of website it is\n\n- who it is for\n\n- the goal\n\n- the design style\n\n- the color direction\n\n- the tone of voice\n\n- the page structure\n\n- the offer\n\n- the CTA\n\n- the features\n\n- what to avoid\n\n- inspiration\n\n- extra notes\n\n- the requested output type\n\nUse multi-select fields for categories where users may want more than one choice.\n\nMake sure presets actually populate the form in a useful way.\n\nImportant rules:\n\n- every dropdown must start with None\n\n- every remaining option must be alphabetized\n\n- do not give fewer than 30 options\n\n- do not skip presets\n\n- do not simplify the layout\n\n- do not return partial code\n\n- return the complete full HTML file only"};
+  var TITLES = {"34": "African American Trivia", "38": "Interactive Game Prompt", "59": "Invitation Prompt", "60": "Interior Design", "61": "Journal Planner", "62": "Song", "63": "Website"};
+  var curPrompt = "";
+  function openPrompt(n){
+    curPrompt = PROMPT_TEXTS[n] || "";
+    document.getElementById("ptitle").textContent = TITLES[n] || "Build Prompt";
+    document.getElementById("ptext").textContent = curPrompt;
+    document.getElementById("copybtn").textContent = "Copy the Prompt";
+    document.getElementById("overlay").classList.add("on");
+  }
+  function closePrompt(){ document.getElementById("overlay").classList.remove("on"); }
+  function copyPrompt(){
+    function done(){ document.getElementById("copybtn").textContent = "Copied ✓"; }
+    if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(curPrompt).then(done, function(){ fallback(); }); }
+    else { fallback(); }
+    function fallback(){
+      var ta = document.createElement("textarea");
+      ta.value = curPrompt; document.body.appendChild(ta); ta.select();
+      try { document.execCommand("copy"); done(); } catch(e){}
+      document.body.removeChild(ta);
+    }
+  }
+  document.getElementById("overlay").addEventListener("click", function(e){ if(e.target === this) closePrompt(); });
 </script>
 </body>
 </html>
